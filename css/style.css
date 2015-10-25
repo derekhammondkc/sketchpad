@@ -3,15 +3,14 @@ body {
 }
 
 #container {
-	width: 512px;
-	height: 512px;
+	width: 600px;
+	height: 600px;
 	border: 2px solid blue;
 	margin: 10px auto;
 }
 #container div {
-	font-size: 10px;
-	width: 30px;
-	height: 30px;
+	width: 35.5px;
+	height: 35.5px;
 	background: green;
 	border: 1px solid black;
 	text-align: center;
