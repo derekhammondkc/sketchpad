@@ -1,12 +1,21 @@
-var gridNum = 32;
+var gridNum = 8;
 var totalGrid = gridNum * gridNum;
-var totalWidth = 600;
-var square = (totalWidth / gridNum) - 2;
+var totalLength = 580;
+var square = (totalLength / gridNum) - 2;
 
 $(document).ready(function () {
-	for (var i = 1; i <= totalGrid; i++) {
-		$('#container').append('<div id="' + i + '">' + i + '</div>')
+	
+	for (var i = 1; i <= gridNum; i++) {
+		for (var j = 1; j <= gridNum; j++) {
+			$('#container').append('<div  class="grid" id="' + j + '"></div>')
+		};
+		$('#container').append('<div class="newRow"></div>');
 	};
-	$('#container > div').css({"width": square,
+	
+	$('#container > .grid').css({"width": square,
 								"height": square});
+
+	$('#container > div').on('mouseenter', function() {
+		$(this).css("background", "yellow");
+	});
 })
