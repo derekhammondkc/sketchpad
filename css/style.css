@@ -1,0 +1,19 @@
+body {
+	text-align: center;
+}
+
+#container {
+	width: 512px;
+	height: 512px;
+	border: 2px solid blue;
+	margin: 10px auto;
+}
+#container div {
+	font-size: 10px;
+	width: 30px;
+	height: 30px;
+	background: green;
+	border: 1px solid black;
+	text-align: center;
+	float: left;
+}
