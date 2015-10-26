@@ -1,47 +1,62 @@
-var gridNum = 8;
-var totalLength = 580;
-var square = (totalLength / gridNum) - 2;
-var color = 0;
-var opacity = 0;
+var gridNum = 8; // Default grids wide
+var totalLength = 500; //Total length of drawing area
+var square = (totalLength / gridNum) - 2; // size of each grid, -2 to account for border
+var color; // Variable to store the random color that gets picked
 
 $(document).ready(function () {
+	// creates the first grid on default values
 	createGrid(gridNum);
 
+	// highlights each grid to yellow when mouse over
 	$('.grid').on('mouseenter', function() {
 		$(this).addClass("highlighted");
 	});
 
+	// when user clicks standard button
 	$('#standard').on('click', function() {
+		// remove all old grids and shades only the clicked button
 		$('.grid').remove();
+		$('.newRow').remove();
 		$('button').css("background", "#e0e0e0");
 		$('#standard').css("background", "#b0b0b0");
 
+		// ask user how many grids wides, and validates between
+		// 2 and 64 grids
 		do {
-			gridNum = prompt("How many grids wide?");
+			gridNum = prompt("How many grids wide (2 to 64)?");
 			if (gridNum < 2 || gridNum > 64) {
 				alert("Grids must be between 2 to 64");
 			}
 		} while(gridNum < 2 || gridNum > 64);
 
+		// creates the standard grid base on number of grids users wants
 		createGrid(gridNum);
 
+		// highlights each grid to yellow when mouse over
 		$('.grid').on('mouseenter', function() {
 			$(this).addClass("highlighted");
 		});
 
 	});
 
+	// when user clicks random color button
 	$('#random').on('click', function() {
+		// remove all old grids and shades only the clicked button
 		$('.grid').remove();
+		$('.newRow').remove();
 		$('button').css("background", "#e0e0e0");
 		$('#random').css("background", "#b0b0b0");
+		
+		// ask user how many grids wides, and validates between
+		// 2 and 64 grids
 		do {
-			gridNum = prompt("How many grids wide?");
+			gridNum = prompt("How many grids wide (2 to 64)?");
 			if (gridNum < 2 || gridNum > 64) {
 				alert("Grids must be between 2 to 64");
 			}
 		} while(gridNum < 2 || gridNum > 64);
 
+		// creates the standard grid base on number of grids users wants
 		createGrid(gridNum);
 
 		$('.grid').on('mouseenter', function() {
@@ -66,6 +81,7 @@ $(document).ready(function () {
 
 	$('#shade').on('click', function() {
 		$('.grid').remove();
+		$('.newRow').remove();
 		$('button').css("background", "#e0e0e0");
 		$('#shade').css("background", "#b0b0b0");
 		do {
