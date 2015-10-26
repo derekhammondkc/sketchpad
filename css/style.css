@@ -12,6 +12,23 @@ body {
 	float: left;
 }
 
+#container .highlighted {
+	background: yellow;
+}
+
+#container .black {
+	background: black;
+}
+
 .newRow {
 	clear: both;
+}
+
+button {
+	border-radius: 5px;
+	background: #e0e0e0;
+
+}
+button:hover {
+	background: #b0b0b0;
 }
